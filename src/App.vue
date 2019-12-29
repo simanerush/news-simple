@@ -3,10 +3,10 @@
     <v-content>
      <v-card class="overflow-hidden">
       <v-app-bar
-        color="deep-purple accent-4"
+        color="red darken-1"
         dark
       >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
 
       <v-toolbar-title>News</v-toolbar-title>
 
@@ -42,7 +42,9 @@
       class="overflow-y-auto"
     >
       <v-container class = "content">
+      <v-row>
       <ArticleTile class = "tile" v-for = "tile in articles" :key="tile.url" :title="tile.title" :image="tile.urlToImage" :author="tile.author" :description="tile.description"></ArticleTile>
+      </v-row>
       </v-container>
     </v-sheet>
     </v-card>
@@ -66,7 +68,7 @@ export default {
     drawer: null,
     articles: [],
     languages: ['ru', 'en'],
-    selectedLanguage: 'ru',
+    selectedLanguage: 'en',
   }),
   methods: {
     loadArticles(){
